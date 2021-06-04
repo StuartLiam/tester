@@ -1,0 +1,114 @@
+; Auto-generated. Do not edit!
+
+
+(cl:in-package arc_msgs-msg)
+
+
+;//! \htmlinclude ArcTaskResult.msg.html
+
+(cl:defclass <ArcTaskResult> (roslisp-msg-protocol:ros-message)
+  ((completed
+    :reader completed
+    :initarg :completed
+    :type cl:boolean
+    :initform cl:nil)
+   (task_id
+    :reader task_id
+    :initarg :task_id
+    :type cl:integer
+    :initform 0)
+   (final_state
+    :reader final_state
+    :initarg :final_state
+    :type cl:string
+    :initform ""))
+)
+
+(cl:defclass ArcTaskResult (<ArcTaskResult>)
+  ())
+
+(cl:defmethod cl:initialize-instance :after ((m <ArcTaskResult>) cl:&rest args)
+  (cl:declare (cl:ignorable args))
+  (cl:unless (cl:typep m 'ArcTaskResult)
+    (roslisp-msg-protocol:msg-deprecation-warning "using old message class name arc_msgs-msg:<ArcTaskResult> is deprecated: use arc_msgs-msg:ArcTaskResult instead.")))
+
+(cl:ensure-generic-function 'completed-val :lambda-list '(m))
+(cl:defmethod completed-val ((m <ArcTaskResult>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader arc_msgs-msg:completed-val is deprecated.  Use arc_msgs-msg:completed instead.")
+  (completed m))
+
+(cl:ensure-generic-function 'task_id-val :lambda-list '(m))
+(cl:defmethod task_id-val ((m <ArcTaskResult>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader arc_msgs-msg:task_id-val is deprecated.  Use arc_msgs-msg:task_id instead.")
+  (task_id m))
+
+(cl:ensure-generic-function 'final_state-val :lambda-list '(m))
+(cl:defmethod final_state-val ((m <ArcTaskResult>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader arc_msgs-msg:final_state-val is deprecated.  Use arc_msgs-msg:final_state instead.")
+  (final_state m))
+(cl:defmethod roslisp-msg-protocol:serialize ((msg <ArcTaskResult>) ostream)
+  "Serializes a message object of type '<ArcTaskResult>"
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'completed) 1 0)) ostream)
+  (cl:let* ((signed (cl:slot-value msg 'task_id)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let ((__ros_str_len (cl:length (cl:slot-value msg 'final_state))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_str_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_str_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_str_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_str_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (c) (cl:write-byte (cl:char-code c) ostream)) (cl:slot-value msg 'final_state))
+)
+(cl:defmethod roslisp-msg-protocol:deserialize ((msg <ArcTaskResult>) istream)
+  "Deserializes a message object of type '<ArcTaskResult>"
+    (cl:setf (cl:slot-value msg 'completed) (cl:not (cl:zerop (cl:read-byte istream))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'task_id) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((__ros_str_len 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'final_state) (cl:make-string __ros_str_len))
+      (cl:dotimes (__ros_str_idx __ros_str_len msg)
+        (cl:setf (cl:char (cl:slot-value msg 'final_state) __ros_str_idx) (cl:code-char (cl:read-byte istream)))))
+  msg
+)
+(cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<ArcTaskResult>)))
+  "Returns string type for a message object of type '<ArcTaskResult>"
+  "arc_msgs/ArcTaskResult")
+(cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql 'ArcTaskResult)))
+  "Returns string type for a message object of type 'ArcTaskResult"
+  "arc_msgs/ArcTaskResult")
+(cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<ArcTaskResult>)))
+  "Returns md5sum for a message object of type '<ArcTaskResult>"
+  "1594f18d1516d447ec066331de31ec36")
+(cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'ArcTaskResult)))
+  "Returns md5sum for a message object of type 'ArcTaskResult"
+  "1594f18d1516d447ec066331de31ec36")
+(cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<ArcTaskResult>)))
+  "Returns full string definition for message of type '<ArcTaskResult>"
+  (cl:format cl:nil "# ====== DO NOT MODIFY! AUTOGENERATED FROM AN ACTION DEFINITION ======~%bool completed		#Whether or not the task was completed.~%int32 task_id #we need to know the id when tasks is returning, since multiple instances of the same task type may return to same callback in task handler. If we don't know the tasks id, we won't be sure what instance it is, and the callback only receives Result info, which doesn't include the task_id outlined for this actions goal.~%string final_state 	#Since tasks are based on a state machine, this can contain the final state that was reached upon completion/termination.~%~%~%"))
+(cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'ArcTaskResult)))
+  "Returns full string definition for message of type 'ArcTaskResult"
+  (cl:format cl:nil "# ====== DO NOT MODIFY! AUTOGENERATED FROM AN ACTION DEFINITION ======~%bool completed		#Whether or not the task was completed.~%int32 task_id #we need to know the id when tasks is returning, since multiple instances of the same task type may return to same callback in task handler. If we don't know the tasks id, we won't be sure what instance it is, and the callback only receives Result info, which doesn't include the task_id outlined for this actions goal.~%string final_state 	#Since tasks are based on a state machine, this can contain the final state that was reached upon completion/termination.~%~%~%"))
+(cl:defmethod roslisp-msg-protocol:serialization-length ((msg <ArcTaskResult>))
+  (cl:+ 0
+     1
+     4
+     4 (cl:length (cl:slot-value msg 'final_state))
+))
+(cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <ArcTaskResult>))
+  "Converts a ROS message object to a list"
+  (cl:list 'ArcTaskResult
+    (cl:cons ':completed (completed msg))
+    (cl:cons ':task_id (task_id msg))
+    (cl:cons ':final_state (final_state msg))
+))

@@ -1,0 +1,8 @@
+prefix=/home/mute/workspace/arc_ws/devel
+
+Name: arc_stage
+Description: Description of arc_stage
+Version: 0.0.0
+Cflags: -I/home/mute/workspace/arc_ws/devel/include
+Libs: -L${prefix}/lib 
+Requires: 

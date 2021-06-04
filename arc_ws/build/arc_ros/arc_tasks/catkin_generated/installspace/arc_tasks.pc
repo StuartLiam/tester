@@ -1,0 +1,8 @@
+prefix=/home/mute/workspace/arc_ws/install
+
+Name: arc_tasks
+Description: Description of arc_tasks
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

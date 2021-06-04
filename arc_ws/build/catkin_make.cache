@@ -1,0 +1,2 @@
+arc_ros/arc_behaviour:arc_ros/arc_control:arc_ros/arc_core:arc_ros/arc_integration_tests:arc_ros/arc_msgs:arc_ros/arc_navigation:arc_ros/arc_recruitment_demos:arc_ros/arc_roles:arc_ros/arc_stage:arc_ros/arc_tasks
+-DCATKIN_DEVEL_PREFIX=/home/mute/workspace/arc_ws/devel -DCMAKE_INSTALL_PREFIX=/home/mute/workspace/arc_ws/install -G Unix Makefiles

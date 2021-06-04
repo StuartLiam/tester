@@ -1,0 +1,8 @@
+prefix=/home/mute/workspace/arc_ws/devel
+
+Name: arc_navigation
+Description: Description of arc_navigation
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

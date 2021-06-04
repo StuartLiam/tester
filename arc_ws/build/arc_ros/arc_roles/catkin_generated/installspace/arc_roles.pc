@@ -1,0 +1,8 @@
+prefix=/home/mute/workspace/arc_ws/install
+
+Name: arc_roles
+Description: Description of arc_roles
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: roscpp arc_msgs

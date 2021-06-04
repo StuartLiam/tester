@@ -1,0 +1,8 @@
+prefix=/home/mute/workspace/arc_ws/devel
+
+Name: arc_msgs
+Description: Description of arc_msgs
+Version: 0.0.0
+Cflags: -I/home/mute/workspace/arc_ws/devel/include
+Libs: -L${prefix}/lib 
+Requires: message_runtime actionlib_msgs
